@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <style>
+body {
+
+background: url("C:/Users/Yash/Desktop/deploy/templates/img2.JPG") no-repeat center center fixed;
+
+  background-color: #AED6F1 ;
+  
+   
+
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.container {
+  width:500;
+  position: absolute;
+  
+  center: 4;
+  margin: 20px;
+  max-width: 400px;
+  border-style: groove;
+  border: 2px groove;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #D1F2EB ;
+}
+
+</style>
+</head>
+
+<body>
+
+ <div class="login">
+
+<h1 style="text-align:center;">  <b><font size="8"   color="#283747">Titanic Survival Prediction</font></b></h1>
+
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post", class="container">
+  
+  
+  
+
+      
+    <b><big>P_Class:</big> </b><input type="test" name="pc" placeholder="pc" required="required" /><br><br>
+   <b> <big>Age: &nbsp&nbsp&nbsp&nbsp&nbsp  </big> <input type="text" name="age" placeholder="age" required="required" /><br><br>
+    	<big>	Siblings: </big> <input type="text" name="sib" placeholder="sib" required="required" /><br><br>
+        <big>Parch:&nbsp&nbsp&nbsp </big><input type="text" name="par" placeholder="par" required="required" /><br><br>
+        <big>Fare:&nbsp&nbsp&nbsp&nbsp&nbsp</big> <input type="text" name="fare" placeholder="fare" required="required" /><br><br>
+<big>Sex:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</big> <label for="sex"></label> 
+<span><select id="sex" name="sex ">
+  <option value="0">Female</option>
+  <option value="1">Male</option>
+</select></span><br><br>
+<span>Embarked_Q: <label for="embq"></label>
+<select id="embq" name="embq">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select></span><br><br>
+<span>Embarked_S:</span> <label for="emb"></label>
+<select id="emb" name="emb">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select><br><br>
+</b>
+<br>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict ! </button> 
+    </form>
+
+   <br>
+   <br>
+   <br>
+   <br>
+  <p style="text-align:right;">  <b><font size="8"   color="#515A5A">{{ prediction_text }}</font></b></p>
+   
+
+ </div>
+
+
+</body>
+</html>
